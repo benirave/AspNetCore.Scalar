@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;netcoreapp3.0;net5.0;net6.0;net7.0</TargetFrameworks>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="index.html" />
+        <EmbeddedResource Include="node_modules\@scalar\api-reference\dist\browser\standalone.js" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+        <PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.0" />
+        <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="2.1.0" />
+        <PackageReference Include="System.Text.Json" Version="4.6.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' != 'netstandard2.0' ">
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+
+    <Target Name="NpmInstall" BeforeTargets="DispatchToInnerBuilds">
+        <Exec Command="npm install" ContinueOnError="true">
+            <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+        </Exec>
+        <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js/npm is required to build this project." />
+    </Target>
+
+</Project>

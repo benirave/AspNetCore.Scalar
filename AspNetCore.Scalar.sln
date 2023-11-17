@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.Scalar", "src\AspNetCore.Scalar\AspNetCore.Scalar.csproj", "{4DFF8981-920A-4319-A2FC-B6BD96778C0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{66B24989-3743-481C-9B95-275830D1C09B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example", "example", "{EA941AD2-4AFC-48F6-8EDF-708DA06C29AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "example\WebApi\WebApi.csproj", "{B0981804-962A-43E3-AD8B-57C6B8FA57C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DFF8981-920A-4319-A2FC-B6BD96778C0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DFF8981-920A-4319-A2FC-B6BD96778C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DFF8981-920A-4319-A2FC-B6BD96778C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DFF8981-920A-4319-A2FC-B6BD96778C0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0981804-962A-43E3-AD8B-57C6B8FA57C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0981804-962A-43E3-AD8B-57C6B8FA57C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0981804-962A-43E3-AD8B-57C6B8FA57C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0981804-962A-43E3-AD8B-57C6B8FA57C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4DFF8981-920A-4319-A2FC-B6BD96778C0C} = {66B24989-3743-481C-9B95-275830D1C09B}
+		{B0981804-962A-43E3-AD8B-57C6B8FA57C7} = {EA941AD2-4AFC-48F6-8EDF-708DA06C29AC}
+	EndGlobalSection
+EndGlobal
