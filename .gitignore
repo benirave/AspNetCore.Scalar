@@ -1,0 +1,10 @@
+[Oo]bj/
+[Bb]in/
+.vs/
+.vscode/
+.idea*
+node_modules/
+*.user
+*.pdb
+*.nuget.props
+.DS_Store
