@@ -48,6 +48,7 @@ namespace AspNet.Scalar
 #endif
             _jsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
             _jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase, false));
+            _jsonSerializerOptions.Converters.Add(new JsonLowerCaseStringEnumConverter<Theme>());
         }
 
         public async Task Invoke(HttpContext httpContext)
