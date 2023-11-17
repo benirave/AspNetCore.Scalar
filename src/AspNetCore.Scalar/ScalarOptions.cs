@@ -29,5 +29,8 @@ namespace AspNet.Scalar
         public bool ShowSidebar { get; set; } = true;
         
         public char SearchHotKey { get; set; } = 'k';
+
+        [JsonExtensionData]
+        public Dictionary<string, object> AdditionalItems { get; set; } = new Dictionary<string, object>();
     }
 }
