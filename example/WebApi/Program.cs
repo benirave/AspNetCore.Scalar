@@ -13,7 +13,6 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
     app.UseScalar(options =>
     {
         options.UseTheme(Theme.Solarized);
