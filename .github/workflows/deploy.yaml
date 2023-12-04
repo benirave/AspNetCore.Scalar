@@ -10,17 +10,7 @@ jobs:
     name: Publish nuget package
 
     steps:
-      - uses: actions/checkout@v3
-        name: Checkout code
-
-      - name: Restore dependencies
-        run: dotnet restore
-
-      - name: Build
-        run: dotnet build --configuration Release --no-restore
-
-      - name: Test
-        run: dotnet test --no-build --verbosity normal
+      - uses: ./.github/workflows/build.yaml
 
       - uses: nuget/setup-nuget@v1
         name: Setup NuGet
