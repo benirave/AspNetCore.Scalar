@@ -7,6 +7,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    name: Build & Test solution
+
     steps:
       - uses: actions/checkout@v3
         name: Checkout code
@@ -20,7 +22,7 @@ jobs:
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --no-restore
+        run: dotnet build --Configuration Release --no-restore
         
       - name: Test
         run: dotnet test --no-build --verbosity normal

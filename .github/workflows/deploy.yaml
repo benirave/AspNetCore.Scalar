@@ -7,6 +7,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    name: Publish nuget package
+
     steps:
       - uses: actions/checkout@v3
         name: Checkout code
@@ -26,7 +28,7 @@ jobs:
           nuget-version: '6.x'
 
       - name: Create the package
-        run: dotnet pack /src/AspNetCore.Scalar/AspNetCore.Scalar.csproj --configuration Release --no-build .
+        run: dotnet pack --configuration Release --no-build .
         
       - name: Publish the package
         run:  dotnet nuget push *.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate
