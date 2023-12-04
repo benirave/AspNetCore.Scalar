@@ -18,6 +18,14 @@ jobs:
 
       - name: Build
         run: dotnet build --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: AspNetCore.Scalar
+          path: artifact
         
   publish:
 
@@ -31,8 +39,10 @@ jobs:
       - uses: actions/checkout@v3
         name: Checkout code
 
-      - name: Test
-        run: dotnet test --no-build --verbosity normal
+      - uses: actions/download-artifact@v2
+        with:
+          name: AspNetCore.Scalar
+          path: artifact
 
       - uses: nuget/setup-nuget@v1
         name: Setup NuGet
