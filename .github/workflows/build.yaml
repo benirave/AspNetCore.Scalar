@@ -9,6 +9,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        name: Checkout code
         
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
