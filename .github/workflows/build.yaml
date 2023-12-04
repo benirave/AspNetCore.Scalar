@@ -1,4 +1,4 @@
-name: Build solution
+name: Build & Test solution
 
 on: workflow_dispatch
 
