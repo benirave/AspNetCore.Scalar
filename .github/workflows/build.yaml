@@ -1,6 +1,6 @@
 name: Build & Test solution
 
-on: workflow_dispatch
+on: pull_request
 
 jobs:
   build:
