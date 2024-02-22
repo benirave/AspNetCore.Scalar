@@ -21,6 +21,11 @@ jobs:
             6.x
             7.x
             8.x
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
 
       - name: Restore dependencies
         run: dotnet restore
