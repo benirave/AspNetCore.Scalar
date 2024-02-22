@@ -13,7 +13,7 @@
 
     <ItemGroup>
         <EmbeddedResource Include="index.html" />
-        <EmbeddedResource Include="node_modules\@scalar\api-reference\dist\browser\standalone.js" />
+        <EmbeddedResource Include="node_modules/@scalar/api-reference/dist/browser/standalone.js" />
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
