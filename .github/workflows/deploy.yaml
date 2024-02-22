@@ -1,0 +1,60 @@
+name: Publish to nuget.org
+
+on: 
+  workflow_dispatch:
+      inputs:
+        version:
+          type: string
+          required: true
+          description: The version of the package
+        pre-release:
+          type: choice
+          required: true
+          default: 'false'
+          options:
+            - true
+            - false
+          description: Is this going to be a pre-release version?
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    name: Publish nuget package
+
+    env:
+      version_suffix: ${{ github.event.inputs.pre-release && '-rc' || '' }}
+
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout code
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: | 
+            5.x
+            6.x
+            7.x
+            8.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build--configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
+
+      - uses: nuget/setup-nuget@v1
+        name: Setup NuGet
+        with:
+          nuget-version: '6.x'
+
+      - name: Create the package
+        run: dotnet pack --configuration Release /p:Version=${{ inputs.version }}${{ env.version_suffix }} --no-build --output . .
+        
+      - name: Publish the package
+        run:  dotnet nuget push *.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate

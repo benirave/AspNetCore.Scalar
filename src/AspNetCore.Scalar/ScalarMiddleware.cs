@@ -41,7 +41,7 @@ namespace AspNet.Scalar
 
             _jsonSerializerOptions = new JsonSerializerOptions();
 
-#if NET6_0
+#if (NET6_0 || NET7_0 || NET8_0)
             _jsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
 #else
             _jsonSerializerOptions.IgnoreNullValues = true;
