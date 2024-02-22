@@ -1,6 +1,7 @@
 name: Publish to nuget.org
 
-on: workflow_dispatch:
+on: 
+  workflow_dispatch:
       inputs:
         version:
           type: string
@@ -8,7 +9,7 @@ on: workflow_dispatch:
           description: The version of the package
         pre-release:
           type: choice
-          requried: true
+          required: true
           default: 'false'
           options:
             - true
