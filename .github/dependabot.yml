@@ -1,17 +1,12 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
 version: 2
 updates:
-  - package-ecosystem: "nuget" # See documentation for possible values
+  - package-ecosystem: "nuget"
     directory: "/src/AspNetCore.Scalar" # AspNetCore.Scalar.csproj
     schedule:
       interval: "weekly"
       day: "wednesday"
     open-pull-requests-limit: 3
-  - package-ecosystem: "npm" # See documentation for possible values
+  - package-ecosystem: "npm"
     directory: "/src/AspNetCore.Scalar" # package.json
     schedule:
       interval: "weekly"
