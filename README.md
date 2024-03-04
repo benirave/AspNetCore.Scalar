@@ -1,6 +1,10 @@
+[![Nuget](https://img.shields.io/nuget/v/aspnetcore.scalar)](https://www.nuget.org/packages/AspNetCore.Scalar)
+
 # .NET Scalar API Reference
 
 Add the [Scalar API Reference](https://github.com/scalar/scalar?tab%253Dreadme-ov-file#with-nextjs) to any of your .NET applications.
+
+> dotnet add package AspNetCore.Scalar --version 1.0.0
 
 ## Usage
 
