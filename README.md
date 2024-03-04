@@ -1,1 +1,80 @@
-# AspNetCore.Scalar
+# .NET Scalar API Reference
+
+Add the [Scalar API Reference](https://github.com/scalar/scalar?tab%253Dreadme-ov-file#with-nextjs) to any of your .NET applications.
+
+## Usage
+
+To incorporate the Scalar UI, simply expose an OpenAPI schema by using [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.WebApi) or [NSwag](https://github.com/RicoSuter/NSwag), and then invoke the **app.UseScalar()**.
+
+Code example.:
+
+```csharp
+using AspNet.Scalar;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add swagger schema generator
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+// Add swagger middleware
+app.UseSwagger();
+// Add Scalar UI
+app.UseScalar(options =>
+{
+    options.UseTheme(Theme.Solarized);
+});
+
+```
+
+Explore a working example [here](./example/).
+
+### Customization Options
+
+`InjectStylesheet`
+
+- **Description**: Injects a stylesheet link into the head content of the ScalarOptions.
+- **Parameters**:
+  - `path` (string): The path to the stylesheet file.
+  - `media` (string, optional): The media type for which the stylesheet is intended. Default value is "screen".
+
+`UseSpecUrl`
+
+- **Description**: Sets the URL for the specification page.
+- **Parameters**:
+  - `url` (string): The URL of the specification page.
+
+`UseTheme`
+
+- **Description**: Sets the theme for the ScalarOptions.
+- **Parameters**:
+  - `theme` (Theme): An enum representing the theme to use.
+
+`HideSidebar`
+
+- **Description**: Hides the sidebar in the ScalarOptions.
+- **Parameters**: None.
+
+`UseSearchAsHotKey`
+
+- **Description**: Sets the search hotkey for the ScalarOptions.
+- **Parameters**:
+  - `hotKey` (char): The character representing the hotkey for search.
+
+`AddAdditionalItem`
+
+- **Description**: Adds an additional item to the ScalarOptions configuration.
+- **Parameters**:
+  - `key` (string): The key of the additional item.
+  - `value` (object): The value of the additional item.
+
+These customization options provide developers with flexibility in configuring the Scalar library to suit their specific needs and preferences. Developers can utilize these options to enhance the functionality and appearance of their applications seamlessly.
+
+## Compatibility
+
+|  AspNetCore.Scalar. |     Scalar    |
+|---------------------|:-------------:|
+|        1.0.1        |    1.17.12    |
+
+This project was based on [Swashbuckle Redoc](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/master/src/Swashbuckle.AspNetCore.ReDoc).
