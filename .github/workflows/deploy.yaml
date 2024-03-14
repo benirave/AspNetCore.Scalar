@@ -14,7 +14,7 @@ on:
           options:
             - true
             - false
-          description: Is this going to be a pre-release version? - On non main branches this is always true
+          description: Is this going to be a pre-release version? - On non-main branches this is always true
 
 jobs:
   build:
