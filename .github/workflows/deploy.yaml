@@ -14,7 +14,7 @@ on:
           options:
             - true
             - false
-          description: Is this going to be a pre-release version? - On non main branches this is always true
+          description: Is this going to be a pre-release version? - On non-main branches this is always true
 
 jobs:
   build:
@@ -27,11 +27,11 @@ jobs:
       version_suffix: ${{ ( inputs.pre-release && github.ref != 'refs/heads/main' ) && '-rc' || '' }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         name: Checkout code
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: | 
             5.x
@@ -43,7 +43,7 @@ jobs:
         run: dotnet restore
 
       - name: Build
-        run: dotnet build--configuration Release --no-restore
+        run: dotnet build --configuration Release --no-restore
 
       - name: Test
         run: dotnet test --no-build --verbosity normal
