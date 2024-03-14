@@ -27,11 +27,11 @@ jobs:
       version_suffix: ${{ ( inputs.pre-release && github.ref != 'refs/heads/main' ) && '-rc' || '' }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         name: Checkout code
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: | 
             5.x
