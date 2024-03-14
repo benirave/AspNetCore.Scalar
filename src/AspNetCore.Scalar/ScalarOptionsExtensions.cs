@@ -21,6 +21,11 @@ namespace AspNet.Scalar
             options.ConfigObject.Theme = theme;
         }
 
+        public static void UseLayout(this ScalarOptions options, Layout layout)
+        {
+            options.ConfigObject.Layout = layout;
+        }
+
         public static void HideSidebar(this ScalarOptions options)
         {
             options.ConfigObject.ShowSidebar = false;

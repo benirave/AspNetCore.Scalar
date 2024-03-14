@@ -49,6 +49,13 @@ Explore a working example [here](./example/).
 - **Parameters**:
   - `url` (string): The URL of the specification page.
 
+`UseLayout`
+
+- **Description**: Sets the layout for the ScalarOptions. You can use 'Modern' and Classic.
+- **Default**: Modern
+- **Parameters**:
+  - `layout` (Theme): An enum representing the layout to use.
+
 `UseTheme`
 
 - **Description**: Sets the theme for the ScalarOptions.

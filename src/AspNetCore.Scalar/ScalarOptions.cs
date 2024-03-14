@@ -26,6 +26,8 @@ namespace AspNet.Scalar
     {
         public Theme Theme { get; set; } = Theme.Default;
 
+        public Layout Layout { get; set; } = Layout.Modern;
+
         public bool ShowSidebar { get; set; } = true;
         
         public char SearchHotKey { get; set; } = 'k';
