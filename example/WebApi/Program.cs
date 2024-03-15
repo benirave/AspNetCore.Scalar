@@ -1,4 +1,4 @@
-using AspNet.Scalar;
+using AspNetCore.Scalar;
 
 var builder = WebApplication.CreateBuilder(args);
 

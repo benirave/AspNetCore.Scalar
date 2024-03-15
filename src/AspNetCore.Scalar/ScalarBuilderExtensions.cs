@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
-namespace AspNet.Scalar
+namespace AspNetCore.Scalar
 {
     public static class ScalarBuilderExtensions
     {
@@ -11,7 +11,7 @@ namespace AspNet.Scalar
         {
             return app.UseMiddleware<ScalarMiddleware>(options);
         }
-        
+
         public static IApplicationBuilder UseScalar(
             this IApplicationBuilder app,
             Action<ScalarOptions> setupAction = null)
@@ -22,7 +22,7 @@ namespace AspNet.Scalar
                 options = scope.ServiceProvider.GetRequiredService<IOptionsSnapshot<ScalarOptions>>().Value;
                 setupAction?.Invoke(options);
             }
-            
+
             return app.UseScalar(options);
         }
     }
