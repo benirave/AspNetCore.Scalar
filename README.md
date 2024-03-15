@@ -13,7 +13,7 @@ To incorporate the Scalar UI, simply expose an OpenAPI schema by using [Swashbuc
 Code example.:
 
 ```csharp
-using AspNet.Scalar;
+using AspNetCore.Scalar;
 
 var builder = WebApplication.CreateBuilder(args);
 

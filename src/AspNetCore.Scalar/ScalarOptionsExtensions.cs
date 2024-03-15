@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace AspNet.Scalar
+namespace AspNetCore.Scalar
 {
     public static class ScalarOptionsExtensions
     {
@@ -10,7 +10,7 @@ namespace AspNet.Scalar
             builder.AppendLine($"<link href='{path}' rel='stylesheet' media='{media}' type='text/css' />");
             options.HeadContent = builder.ToString();
         }
-        
+
         public static void UseSpecUrl(this ScalarOptions options, string url)
         {
             options.SpecUrl = url;

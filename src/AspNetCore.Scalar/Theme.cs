@@ -1,5 +1,4 @@
-﻿
-namespace AspNet.Scalar
+﻿namespace AspNetCore.Scalar
 {
     public enum Theme
     {
