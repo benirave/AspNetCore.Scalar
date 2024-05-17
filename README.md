@@ -87,5 +87,6 @@ These customization options provide developers with flexibility in configuring t
 |  AspNetCore.Scalar. |     Scalar    |
 |---------------------|:-------------:|
 |        1.0.0        |    1.17.12    |
+|        1.1.0        |    1.19.2     |
 
 This project was based on [Swashbuckle Redoc](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/master/src/Swashbuckle.AspNetCore.ReDoc).
