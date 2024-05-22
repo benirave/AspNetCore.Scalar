@@ -4,7 +4,7 @@
 
 Add the [Scalar API Reference](https://github.com/scalar/scalar?tab%253Dreadme-ov-file#with-nextjs) to any of your .NET applications.
 
-> dotnet add package AspNetCore.Scalar --version 1.1.0
+> dotnet add package AspNetCore.Scalar --version 1.1.1
 
 ## Usage
 
@@ -88,5 +88,6 @@ These customization options provide developers with flexibility in configuring t
 |---------------------|:-------------:|
 |        1.0.0        |    1.17.12    |
 |        1.1.0        |    1.19.2     |
+|        1.1.1        |    1.22.48    |
 
 This project was based on [Swashbuckle Redoc](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/master/src/Swashbuckle.AspNetCore.ReDoc).
