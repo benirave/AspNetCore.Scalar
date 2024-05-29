@@ -4,6 +4,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@scalar/api-reference": "^1.22.48"
+    "@scalar/api-reference": "^1.22.56"
   }
 }
