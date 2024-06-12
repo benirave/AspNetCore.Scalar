@@ -84,7 +84,7 @@ These customization options provide developers with flexibility in configuring t
 
 ## Compatibility
 
-|  AspNetCore.Scalar. |     Scalar    |
+|  AspNetCore.Scalar  |     Scalar    |
 |---------------------|:-------------:|
 |        1.0.0        |    1.17.12    |
 |        1.1.0        |    1.19.2     |
