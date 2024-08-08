@@ -4,7 +4,7 @@
 
 Add the [Scalar API Reference](https://github.com/scalar/scalar?tab%253Dreadme-ov-file#with-nextjs) to any of your .NET applications.
 
-> dotnet add package AspNetCore.Scalar --version 1.1.2
+> dotnet add package AspNetCore.Scalar --version 1.1.3
 
 ## Usage
 
