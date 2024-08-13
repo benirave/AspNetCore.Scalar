@@ -29,6 +29,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflow", "workflow", "{E6
 		.github\workflows\deploy.yaml = .github\workflows\deploy.yaml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7556B752-771B-426C-B429-93AE5D6B27D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.Scalar.Integration.Tests", "tests\AspNetCore.Scalar.Integration.Tests\AspNetCore.Scalar.Integration.Tests.csproj", "{66EB83AC-45E0-4095-8C65-8D30738E9007}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,10 @@ Global
 		{B0981804-962A-43E3-AD8B-57C6B8FA57C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0981804-962A-43E3-AD8B-57C6B8FA57C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0981804-962A-43E3-AD8B-57C6B8FA57C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66EB83AC-45E0-4095-8C65-8D30738E9007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66EB83AC-45E0-4095-8C65-8D30738E9007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66EB83AC-45E0-4095-8C65-8D30738E9007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66EB83AC-45E0-4095-8C65-8D30738E9007}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +59,7 @@ Global
 		{4DFF8981-920A-4319-A2FC-B6BD96778C0C} = {66B24989-3743-481C-9B95-275830D1C09B}
 		{B0981804-962A-43E3-AD8B-57C6B8FA57C7} = {EA941AD2-4AFC-48F6-8EDF-708DA06C29AC}
 		{E6428BE2-5181-48A3-8783-A17D6BC2B422} = {5E3AF09F-2201-4C58-9108-1DE92516CA58}
+		{66EB83AC-45E0-4095-8C65-8D30738E9007} = {7556B752-771B-426C-B429-93AE5D6B27D6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {425152F8-0817-4E47-AC6F-AF8E277E2212}
