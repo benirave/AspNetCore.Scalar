@@ -16,6 +16,8 @@ on:
             - false
           description: Is this going to be a pre-release version? - On non-main branches this is always true
 
+run-name: ${{ inputs.version }} - ${{ github.head_ref || github.ref_name }} 
+
 jobs:
   build:
 
@@ -45,8 +47,18 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
 
-      - name: Test
-        run: dotnet test --no-build --verbosity normal
+      - name: Run Tests
+        timeout-minutes: 15
+        continue-on-error: false
+        run: dotnet test -c Release --no-build --no-restore --verbosity normal --logger "trx;logfilename=results.trx" --results-directory ./test-results
+
+      - name: Report Tests
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: .NET Test Report
+          path: "${{ github.workspace }}/test-results/results.trx"
+          reporter: dotnet-trx
 
       - uses: nuget/setup-nuget@v2
         name: Setup NuGet
