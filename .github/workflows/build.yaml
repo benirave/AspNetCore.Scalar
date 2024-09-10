@@ -41,7 +41,8 @@ jobs:
       - name: Upload dotnet test results
         uses: actions/upload-artifact@v4
         with:
+          if-no-files-found: error
           name: dotnet-test-results
-          path: "/test-results/results.trx"                            
+          path: "${{ GITHUB_WORKSPACE }}/test-results/results.trx"                            
         # Use always() to always run this step to publish test results when there are test failures
         if: ${{ always() }}
