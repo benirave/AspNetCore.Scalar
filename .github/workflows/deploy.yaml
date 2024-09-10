@@ -24,7 +24,8 @@ jobs:
     env:
       version_suffix: ${{ ( inputs.pre-release && github.ref != 'refs/heads/main' ) && '-rc' || '' }}
 
-    name: Publish ${{ inputs.version }}${{ env.version_suffix }} nuget package
+    name: Publish nuget package
+    run-name: ${{ inputs.version }}${{ env.version_suffix }}
 
     steps:
       - uses: actions/checkout@v4
