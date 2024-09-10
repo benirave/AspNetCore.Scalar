@@ -43,6 +43,6 @@ jobs:
         with:
           if-no-files-found: error
           name: dotnet-test-results
-          path: "${{ GITHUB_WORKSPACE }}/test-results/results.trx"                            
+          path: "${{ github.workspace }}/test-results/results.trx"                            
         # Use always() to always run this step to publish test results when there are test failures
         if: ${{ always() }}
