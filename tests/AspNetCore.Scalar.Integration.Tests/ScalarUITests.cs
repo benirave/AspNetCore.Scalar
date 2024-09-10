@@ -54,9 +54,9 @@ namespace AspNetCore.Scalar.Integration.Tests
             var doc = JsonSerializer.Deserialize<JsonElement>(swaggerJson);
 
             var paths = doc.GetProperty("paths");
-            var path = paths.TryGetProperty("endpointPath", out _);
+            var endpointExists = paths.TryGetProperty(endpointPath, out _);
 
-            Assert.True(path, nameof(EnsureGivenEndpointExistsInSwaggerJson));
+            Assert.True(endpointExists, nameof(EnsureGivenEndpointExistsInSwaggerJson));
         }
 
         private static void EnsureScalarHtmlDocumentContainsGivenSwaggerPath(IElement scalarElement, string swaggerJsonPath)
