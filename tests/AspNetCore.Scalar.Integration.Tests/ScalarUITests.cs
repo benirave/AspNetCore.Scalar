@@ -10,6 +10,8 @@ namespace AspNetCore.Scalar.Integration.Tests
 
     public class ScalarUITests
     {
+        private static ScalarOptions DefaultScalarOptions = new();
+
         private const string ScalarUIPath = "scalar-api-docs";
         private const string DefaultSwaggerDocPath = "swagger/v1/swagger.json";
 
@@ -19,7 +21,7 @@ namespace AspNetCore.Scalar.Integration.Tests
         public async Task UseScalar_ShouldRenderScalarUI()
         {
             // Arrange
-            using var client = TestServerBuilder.BuildServer()
+            using var client = TestServerBuilder.BuildServer(DefaultScalarOptions)
                 .CreateClient();
 
             // Act

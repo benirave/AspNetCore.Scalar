@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+
 
 #if NET5_0
 using Microsoft.AspNetCore.Mvc;
@@ -11,7 +13,7 @@ namespace AspNetCore.Scalar.Integration.Tests
 {
     internal static class TestServerBuilder
     {
-        public static TestServer BuildServer()
+        public static TestServer BuildServer(ScalarOptions options)
         {
             var builder = new WebHostBuilder()
                 .ConfigureServices(services =>
@@ -31,7 +33,7 @@ namespace AspNetCore.Scalar.Integration.Tests
                 {
                     app.UseRouting();
                     app.UseSwagger();
-                    app.UseScalar();
+                    app.UseScalar(options);
 
                     app.UseEndpoints(endpointBuilder =>
                     {
@@ -64,6 +66,5 @@ namespace AspNetCore.Scalar.Integration.Tests
             return new OkResult();
         }
     }
-}
 #endif
 }
