@@ -38,10 +38,10 @@ jobs:
         continue-on-error: false
         run: dotnet test -c Release --no-build --no-restore --verbosity normal --logger "trx;logfilename=results.trx" --results-directory ./test-results
 
-      - name: Test Report
+      - name: Report Tests
         uses: dorny/test-reporter@v1
         if: success() || failure()
         with:
-          name: Report .NET Tests
+          name: .NET Test Report
           path: "${{ github.workspace }}/test-results/results.trx"
           reporter: dotnet-trx
