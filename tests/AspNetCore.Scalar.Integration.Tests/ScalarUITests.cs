@@ -1,20 +1,9 @@
 using Xunit;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.TestHost;
-using Microsoft.Extensions.DependencyInjection;
 using System.Text.Json;
 using AngleSharp;
 using System;
 using System.Linq;
-
-
-
-
-#if NET5_0
-using Microsoft.AspNetCore.Mvc;
-#endif
 
 namespace AspNetCore.Scalar.Integration.Tests
 {
@@ -30,7 +19,8 @@ namespace AspNetCore.Scalar.Integration.Tests
         public async Task UseScalar_ShouldRenderScalarUI()
         {
             // Arrange
-            using var client = BuildServer().CreateClient();
+            using var client = TestServerBuilder.BuildServer()
+                .CreateClient();
 
             // Act
             var swaggerDocResponse = await client.GetAsync(DefaultSwaggerDocPath);
@@ -81,59 +71,5 @@ namespace AspNetCore.Scalar.Integration.Tests
             var path = doc.GetProperty("paths");
             return path.TryGetProperty("/health", out _);
         }
-
-        private static TestServer BuildServer()
-        {
-            var builder = new WebHostBuilder()
-                .ConfigureServices(services =>
-                {
-#if NET6_0_OR_GREATER
-   
-                    services.AddEndpointsApiExplorer();
-#endif
-#if NET5_0
-                    services.AddMvcCore()
-                            .AddApiExplorer();
-#endif
-                    services.AddRouting();
-                    services.AddSwaggerGen();
-                })
-                .Configure(app =>
-                {
-                    app.UseRouting();
-                    app.UseSwagger();
-                    app.UseScalar();
-
-                    app.UseEndpoints(endpointBuilder =>
-                    {
-#if NET5_0
-                        endpointBuilder.MapControllers();
-#endif
-#if NET6_0_OR_GREATER
-                        endpointBuilder.MapGet("/health", () =>
-                        {
-
-                            return "OK";
-                        });
-#endif
-                    });
-                })
-                .UseTestServer();
-
-            return new TestServer(builder);
-        }
     }
 }
-
-#if NET5_0
-
-[ApiController]
-public class TestController
-{
-    [HttpGet("/health")]
-    public IActionResult Health()
-    {
-        return new OkResult();
-    }
-}
-#endif
