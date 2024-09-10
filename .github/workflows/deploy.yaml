@@ -46,6 +46,8 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Test
+        timeout-minutes: 15
+        continue-on-error: false
         run: dotnet test --no-build --verbosity normal
 
       - uses: nuget/setup-nuget@v2
