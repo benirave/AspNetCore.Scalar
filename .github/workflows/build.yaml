@@ -33,10 +33,10 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
         
-      - name: Run Test
+      - name: Run Tests
         timeout-minutes: 15
         continue-on-error: false
-        run: dotnet test -c Release --no-build --no-restore --verbosity normal
+        run: dotnet test -c Release --no-build --no-restore --verbosity normal --results-directory "TestResults-${{ matrix.dotnet-version }}"
           
       - name: Upload dotnet test results
         uses: actions/upload-artifact@v4
