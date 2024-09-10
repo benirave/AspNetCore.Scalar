@@ -47,7 +47,6 @@ jobs:
 
       - name: Run Test
         timeout-minutes: 15
-        continue-on-error: false
         run: dotnet test --no-build --verbosity normal "TestResults-${{ matrix.dotnet-version }}"
 
       - name: Upload dotnet test results
