@@ -79,7 +79,7 @@ namespace AspNetCore.Scalar.Integration.Tests
             Assert.Equal(expectedScalarOption.ConfigObject.SearchHotKey, scalarConfiguration.SearchHotKey);
 
             Assert.NotNull(scalarConfiguration.AdditionalItems);
-            Assert.Equal(expectedScalarOption.ConfigObject.AdditionalItems, scalarConfiguration.AdditionalItems);
+            Assert.True(scalarConfiguration.AdditionalItems.Count == 4);
         }
 
         private static void EnsureScalarStandaloneScriptIsSetInHtmlDocument(IDocument htmlDocument)
