@@ -46,3 +46,11 @@ jobs:
           path: "${{ github.workspace }}/test-results/results.trx"                            
         # Use always() to always run this step to publish test results when there are test failures
         if: ${{ always() }}
+
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
+        with:
+          name: .NET Tests            # Name of the check run which will be created
+          path: "${{ github.workspace }}/test-results/results.trx"        # Path to test results
+          reporter: dotnet-trx        # Format of test results
