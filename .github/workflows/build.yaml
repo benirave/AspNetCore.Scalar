@@ -36,12 +36,12 @@ jobs:
       - name: Run Tests
         timeout-minutes: 15
         continue-on-error: false
-        run: dotnet test -c Release --no-build --no-restore --verbosity normal --logger "trx;logfilename=${{ matrix.name }}.trx" --results-directory ./test-results
+        run: dotnet test -c Release --no-build --no-restore --verbosity normal --logger "trx;logfilename=results.trx" --results-directory ./test-results
           
       - name: Upload dotnet test results
         uses: actions/upload-artifact@v4
         with:
-          name: dotnet-test-results-${{ matrix.name }}
-          path: "${{ matrix.directoryPath }}/test-results/${{ matrix.name }}.trx"                            
+          name: dotnet-test-results
+          path: "/test-results/results.trx"                            
         # Use always() to always run this step to publish test results when there are test failures
         if: ${{ always() }}
