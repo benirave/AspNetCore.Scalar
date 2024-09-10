@@ -78,8 +78,10 @@ namespace AspNetCore.Scalar.Integration.Tests
             Assert.Equal(expectedScalarOption.ConfigObject.ShowSidebar, scalarConfiguration.ShowSidebar);
             Assert.Equal(expectedScalarOption.ConfigObject.SearchHotKey, scalarConfiguration.SearchHotKey);
 
+            var configObjectPropertyNames = scalarConfiguration.GetType().GetProperties().Select(x => x.Name.ToLower());
+
             Assert.NotNull(scalarConfiguration.AdditionalItems);
-            Assert.True(scalarConfiguration.AdditionalItems.Count == 4);
+            Assert.Equal(expectedScalarOption.ConfigObject.AdditionalItems, scalarConfiguration.AdditionalItems.Where(x => !configObjectPropertyNames.Contains(x.Key.ToLower())));
         }
 
         private static void EnsureScalarStandaloneScriptIsSetInHtmlDocument(IDocument htmlDocument)
