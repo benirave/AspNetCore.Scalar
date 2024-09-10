@@ -21,10 +21,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    name: Publish nuget package
-
     env:
       version_suffix: ${{ ( inputs.pre-release && github.ref != 'refs/heads/main' ) && '-rc' || '' }}
+
+    name: Publish ${{ inputs.version }}${{ env.version_suffix }} nuget package
 
     steps:
       - uses: actions/checkout@v4
