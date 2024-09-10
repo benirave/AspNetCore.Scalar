@@ -21,8 +21,6 @@ namespace AspNetCore.Scalar.Integration.Tests
         [Fact]
         public async Task UseScalar_ShouldRenderScalarUI()
         {
-
-            throw new Exception();
             // Arrange
             using var client = TestServerBuilder.BuildServer(DefaultScalarOptions)
                 .CreateClient();
