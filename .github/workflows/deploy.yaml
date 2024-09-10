@@ -16,16 +16,17 @@ on:
             - false
           description: Is this going to be a pre-release version? - On non-main branches this is always true
 
+run-name: ${{ inputs.version }} - ${{ github.head_ref || github.ref_name }} 
+
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
+    name: Publish nuget package
+
     env:
       version_suffix: ${{ ( inputs.pre-release && github.ref != 'refs/heads/main' ) && '-rc' || '' }}
-
-    name: Publish nuget package
-    run-name: ${{ inputs.version }}${{ env.version_suffix }}
 
     steps:
       - uses: actions/checkout@v4
