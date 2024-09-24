@@ -15,6 +15,11 @@ on:
             - true
             - false
           description: Is this going to be a pre-release version? - On non-main branches this is always true
+  
+permissions:
+  contents: read
+  actions: read
+  checks: write
 
 run-name: ${{ inputs.version }} - ${{ github.head_ref || github.ref_name }} 
 
