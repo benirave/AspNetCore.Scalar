@@ -15,7 +15,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseScalar(options =>
     {
-        options.UseCdn();
         options.UseTheme(Theme.Solarized);
     });
 }
