@@ -32,29 +32,6 @@ app.UseScalar(options =>
 
 ```
 
-With CDN.:
-
-```csharp
-using AspNetCore.Scalar;
-
-var builder = WebApplication.CreateBuilder(args);
-
-// Add swagger schema generator
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-// Add swagger middleware
-app.UseSwagger();
-// Add Scalar UI
-app.UseScalar(options =>
-{
-    options.UseCdn("https://cdn.jsdelivr.net/npm/@scalar/api-reference");
-    options.UseTheme(Theme.Solarized);
-});
-
-```
-
 Explore a working example [here](./example/).
 
 ### Customization Options
@@ -71,12 +48,6 @@ Explore a working example [here](./example/).
 - **Description**: Sets the URL for the specification page.
 - **Parameters**:
   - `url` (string): The URL of the specification page.
-
-`UseCdn`
-
-- **Description**: Sets the CDN URL for the asset.
-- **Parameters**:
-    - `url` (string): The URL of the specification page.
 
 `UseLayout`
 

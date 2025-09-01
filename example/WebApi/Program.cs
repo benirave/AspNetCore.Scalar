@@ -15,12 +15,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseScalar(options =>
     {
-        options.UseCdn("https://cdn.jsdelivr.net/npm/@scalar/api-reference");
-        options.UseTheme(Theme.Mars);
+        options.UseTheme(Theme.Solarized);
     });
 }
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
 var summaries = new[]
 {
