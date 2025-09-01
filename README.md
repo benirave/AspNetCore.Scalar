@@ -18,12 +18,14 @@ using AspNetCore.Scalar;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add swagger schema generator
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
 // Add swagger middleware
 app.UseSwagger();
+
 // Add Scalar UI
 app.UseScalar(options =>
 {
