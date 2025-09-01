@@ -21,6 +21,8 @@ namespace AspNetCore.Scalar
         public Func<Stream> IndexStream { get; set; } = () => typeof(ScalarOptions).GetTypeInfo().Assembly
             .GetManifestResourceStream("AspNetCore.Scalar.index.html");
 
+        public string CdnUrl { get; set; }
+
         public ConfigObject ConfigObject { get; set; } = new ConfigObject();
     }
 
