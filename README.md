@@ -84,18 +84,17 @@ These customization options provide developers with flexibility in configuring t
 
 ## Compatibility
 
-|  AspNetCore.Scalar  |     Scalar    |
-|---------------------|:-------------:|
-|        1.0.0        |    1.17.12    |
-|        1.1.0        |    1.19.2     |
-|        1.1.1        |    1.22.48    |
-|        1.1.2        |    1.23.5     |
-|        1.1.3        |    1.24.72    |
-|        1.1.4        |    1.24.75    |
-|        1.1.5        |    1.25.6     |
-|        1.1.6        |    1.25.9     |
-|        1.1.7        |    1.25.17    |
-|        1.1.8        |    1.25.63    |
-
+| AspNetCore.Scalar | Scalar |
+|-------------------|:------:|
+| 1.0.0             | 1.17.12 |
+| 1.1.0             | 1.19.2 |
+| 1.1.1             | 1.22.48 |
+| 1.1.2             | 1.23.5 |
+| 1.1.3             | 1.24.72 |
+| 1.1.4             | 1.24.75 |
+| 1.1.5             | 1.25.6 |
+| 1.1.6             | 1.25.9 |
+| 1.1.7             | 1.25.17 |
+| 1.1.8             | 1.25.63 |
 
 This project was based on [Swashbuckle Redoc](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/master/src/Swashbuckle.AspNetCore.ReDoc).
