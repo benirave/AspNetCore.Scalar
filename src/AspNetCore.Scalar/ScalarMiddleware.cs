@@ -119,7 +119,7 @@ namespace AspNetCore.Scalar
                 { "%(DocumentTitle)", _options.DocumentTitle },
                 { "%(HeadContent)", _options.HeadContent },
                 { "%(SpecUrl)", _options.SpecUrl },
-                { "%(ProxyUrl)", _options.ProxyUrl }
+                { "%(ProxyUrl)", _options.ProxyUrl },
                 { "%(ConfigObject)", JsonSerializer.Serialize(_options.ConfigObject, _jsonSerializerOptions) },
                 { "%(ScalarPackagePath)", _options.CdnUrl ?? "standalone.js" }
             };
