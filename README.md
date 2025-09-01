@@ -96,7 +96,5 @@ These customization options provide developers with flexibility in configuring t
 | 1.1.6             | 1.25.9 |
 | 1.1.7             | 1.25.17 |
 | 1.1.8             | 1.25.63 |
-| 1.1.9             | 1.34.6 |
-
 
 This project was based on [Swashbuckle Redoc](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/master/src/Swashbuckle.AspNetCore.ReDoc).
