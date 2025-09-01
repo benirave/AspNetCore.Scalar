@@ -8,7 +8,6 @@ using Xunit;
 
 namespace AspNetCore.Scalar.Integration.Tests
 {
-
     public class ScalarUITests
     {
         private static readonly ScalarOptions DefaultScalarOptions = new();
@@ -44,6 +43,8 @@ namespace AspNetCore.Scalar.Integration.Tests
             var apiReferenceLocator = scalarHtmlDocument.GetElementById("api-reference");
 
             EnsureScalarHtmlDocumentContainsGivenSwaggerPath(apiReferenceLocator, DefaultScalarOptions.SpecUrl);
+            
+            EnsureScalarHtmlDocumentContainsGivenProxyPath(apiReferenceLocator, DefaultScalarOptions.ProxyUrl);
 
             EnsureScalarConfigurationIsCorrectlySetInHtmlDocument(apiReferenceLocator, DefaultScalarOptions);
 
@@ -104,7 +105,14 @@ namespace AspNetCore.Scalar.Integration.Tests
 
             Assert.True(dataUrl.Equals(swaggerJsonPath, StringComparison.InvariantCultureIgnoreCase), nameof(EnsureScalarHtmlDocumentContainsGivenSwaggerPath));
         }
+        
+        private static void EnsureScalarHtmlDocumentContainsGivenProxyPath(IElement scalarElement, string expectedProxyUrl)
+        {
+            var proxyUrl = scalarElement.GetAttribute("data-proxy-url");
 
+            Assert.True(proxyUrl.Equals(expectedProxyUrl, StringComparison.InvariantCultureIgnoreCase), nameof(EnsureScalarHtmlDocumentContainsGivenProxyPath));
+        }
+        
         private static void EnsureScalarConfigurationIsCorrectlySetInHtmlDocument(IElement scalarElement, ScalarOptions expectedScalarOption)
         {
             var configurationLocator = scalarElement.GetAttribute("data-configuration");
