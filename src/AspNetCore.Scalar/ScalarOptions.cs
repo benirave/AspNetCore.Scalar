@@ -12,12 +12,14 @@ namespace AspNetCore.Scalar
 
         public string DocumentTitle { get; set; } = "API Docs";
 
-        public string HeadContent { get; set; } = "";
+        public string HeadContent { get; set; } = string.Empty;
 
         public string SpecUrl { get; set; } = "../swagger/v1/swagger.json";
 
         public Func<Stream> IndexStream { get; set; } = () => typeof(ScalarOptions).GetTypeInfo().Assembly
             .GetManifestResourceStream("AspNetCore.Scalar.index.html");
+
+        public string CdnUrl { get; set; }
 
         public ConfigObject ConfigObject { get; set; } = new ConfigObject();
     }
