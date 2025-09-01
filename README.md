@@ -49,6 +49,14 @@ Explore a working example [here](./example/).
 - **Parameters**:
   - `url` (string): The URL of the specification page.
 
+`UseCdn`
+
+- **Description**: Sets the CDN URL for the asset.
+- **Default**: https://cdn.jsdelivr.net/npm/@scalar/api-reference
+- **Parameters**:
+    - `url` (string): The URL of the specification page.
+
+
 `UseLayout`
 
 - **Description**: Sets the layout for the ScalarOptions. You can use 'Modern' and Classic.
