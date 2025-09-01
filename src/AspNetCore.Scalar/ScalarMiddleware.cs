@@ -24,6 +24,8 @@ namespace AspNetCore.Scalar
     {
         private const string EmbeddedFileNamespace = "AspNetCore.Scalar.node_modules._scalar.api_reference.dist.browser";
 
+        private const string EmbeddedStandaloneJavascriptFilePath = "standalone.js";
+
         private readonly ScalarOptions _options;
         private readonly StaticFileMiddleware _staticFileMiddleware;
         private readonly JsonSerializerOptions _jsonSerializerOptions;
@@ -120,7 +122,7 @@ namespace AspNetCore.Scalar
                 { "%(HeadContent)", _options.HeadContent },
                 { "%(SpecUrl)", _options.SpecUrl },
                 { "%(ConfigObject)", JsonSerializer.Serialize(_options.ConfigObject, _jsonSerializerOptions) },
-                { "%(ScalarPackagePath)", _options.CdnUrl ?? "standalone.js" }
+                { "%(ScalarPackagePath)", _options.CdnUrl ?? EmbeddedStandaloneJavascriptFilePath }
             };
         }
     }

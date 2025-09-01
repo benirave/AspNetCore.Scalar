@@ -4,9 +4,6 @@ namespace AspNetCore.Scalar
 {
     public static class ScalarOptionsExtensions
     {
-        private const string DefaultCdnUrl = "https://cdn.jsdelivr.net/npm/@scalar/api-reference";
-
-        
         public static void InjectStylesheet(this ScalarOptions options, string path, string media = "screen")
         {
             var builder = new StringBuilder(options.HeadContent);
@@ -14,7 +11,7 @@ namespace AspNetCore.Scalar
             options.HeadContent = builder.ToString();
         }
         
-        public static void UseCdn(this ScalarOptions options, string url = DefaultCdnUrl)
+        public static void UseCdn(this ScalarOptions options, string url)
         {
             options.CdnUrl = url;
         }
