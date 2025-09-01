@@ -54,7 +54,13 @@ Explore a working example [here](./example/).
 - **Description**: Sets the CDN URL for the asset.
 - **Default**: https://cdn.jsdelivr.net/npm/@scalar/api-reference
 - **Parameters**:
-    - `url` (string): The URL of the specification page.
+    - `url` (string): The URL of the cdn asset.
+
+`UseProxy`
+
+- **Description**: Sets the Proxy URL to use.
+- **Parameters**:
+    - `url` (string): The URL of the proxy server.
 
 
 `UseLayout`
@@ -104,5 +110,6 @@ These customization options provide developers with flexibility in configuring t
 | 1.1.6             | 1.25.9 |
 | 1.1.7             | 1.25.17 |
 | 1.1.8             | 1.25.63 |
+| 1.2.0             | 1.34.6 |
 
 This project was based on [Swashbuckle Redoc](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/master/src/Swashbuckle.AspNetCore.ReDoc).
