@@ -15,6 +15,8 @@ namespace AspNetCore.Scalar
         public string HeadContent { get; set; } = string.Empty;
 
         public string SpecUrl { get; set; } = "../swagger/v1/swagger.json";
+        
+        public string ProxyUrl { get; set; } = string.Empty;
 
         public Func<Stream> IndexStream { get; set; } = () => typeof(ScalarOptions).GetTypeInfo().Assembly
             .GetManifestResourceStream("AspNetCore.Scalar.index.html");
@@ -33,7 +35,7 @@ namespace AspNetCore.Scalar
         public bool ShowSidebar { get; set; } = true;
 
         public char SearchHotKey { get; set; } = 'k';
-
+        
         [JsonExtensionData]
         public Dictionary<string, object> AdditionalItems { get; set; } = new Dictionary<string, object>();
     }

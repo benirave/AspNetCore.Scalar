@@ -22,6 +22,11 @@ namespace AspNetCore.Scalar
         {
             options.SpecUrl = url;
         }
+        
+        public static void UseProxy(this ScalarOptions options, string url)
+        {
+            options.ProxyUrl = url;
+        }
 
         public static void UseTheme(this ScalarOptions options, Theme theme)
         {
